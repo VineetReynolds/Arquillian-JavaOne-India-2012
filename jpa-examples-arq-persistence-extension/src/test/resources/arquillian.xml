@@ -14,15 +14,30 @@
 	<!-- JBoss AS 7 (Managed) -->
     <container qualifier="jboss-as7">
         <configuration>
-            <property name="jbossHome">D:\Apps\jboss-as-7.1.0.Final</property>
+            <property name="jbossHome">C:\Apps\jboss-as-7.1.0.Final</property>
         </configuration>
     </container>
     
     <!-- GlassFish 3.1 (Managed) -->
-   	<container qualifier="glassfish-31">
+   	<container qualifier="glassfish-31-managed">
         <configuration>
-        	<property name="glassFishHome">G:\Apps\glassfish3</property>
+            <property name="glassFishHome">C:\Apps\glassfish312\glassfish3</property>
         </configuration>
+    </container>
+    
+    <!-- GlassFish 3.1 (Remote) -->
+   	<container qualifier="glassfish-31-remote">
+    </container>
+    
+    <!-- WebLogic 12c (Remote) -->
+   	<container qualifier="wls-12c-remote">
+   		<configuration>
+   			<property name="adminUrl">t3://localhost:7001</property>
+   			<property name="adminUserName">weblogic</property>
+   			<property name="adminPassword">welcome1</property>
+   			<property name="wlsHome">C:\Apps\wls1211_dev\wlserver</property>
+   			<property name="target">myserver</property>
+   		</configuration>
     </container>
 
 	<!-- Persistence Extension Configuration -->

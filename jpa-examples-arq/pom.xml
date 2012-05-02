@@ -131,7 +131,7 @@
 						<version>2.12</version>
 						<configuration>
 							<systemPropertyVariables>
-								<arquillian.launch>glassfish-31</arquillian.launch>
+								<arquillian.launch>glassfish-31-managed</arquillian.launch>
 							</systemPropertyVariables>
 						</configuration>
 					</plugin>
@@ -139,7 +139,34 @@
 			</build>
 		</profile>
 		<profile>
-			<id>wls-121-remote</id>
+			<id>glassfish-31-remote</id>
+			<dependencies>
+				<!-- Arquillian GlassFish 3.1 managed container -->
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-glassfish-remote-3.1</artifactId>
+					<version>${arquillian.glassfish.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<!-- Override Surefire 2.7.2 to avoid SUREFIRE-743 and ensure container 
+						shutdown. -->
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12</version>
+						<configuration>
+							<systemPropertyVariables>
+								<arquillian.launch>glassfish-31-remote</arquillian.launch>
+							</systemPropertyVariables>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>wls-12c-remote</id>
 			<dependencies>
 				<!-- Arquillian GlassFish 3.1 managed container -->
 				<dependency>
@@ -158,7 +185,7 @@
 						<version>2.12</version>
 						<configuration>
 							<systemPropertyVariables>
-								<arquillian.launch>wls-12c</arquillian.launch>
+								<arquillian.launch>wls-12c-remote</arquillian.launch>
 							</systemPropertyVariables>
 						</configuration>
 					</plugin>
