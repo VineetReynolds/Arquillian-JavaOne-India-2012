@@ -1,6 +1,24 @@
-*.class
+# Eclipse
+.metadata
+.project
+.classpath
+.settings/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Maven
+target/
+
+# TestNG
+test-output/
+
+# JBoss AS
+transaction.log
+
+# GlassFish CommandRunner Test
+derby.log
+my_database/
